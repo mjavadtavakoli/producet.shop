@@ -19,6 +19,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		{"تی‌شرت مردانه", 250_000, "/static/image.png"},
 		{"شلوار جین", 400_000, "/static/image.png"},
 		{"کفش اسپرت", 550_000, "/static/image.png"},
+		/*{" شرتک", 150_000, "/static/image.png"},*/
 	}
 
 	tmpl, err := template.ParseFiles("templates/index.html")
