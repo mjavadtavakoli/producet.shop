@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    direction: rtl;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
