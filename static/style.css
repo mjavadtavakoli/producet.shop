@@ -9,7 +9,7 @@ body {
     font-family: sans-serif;
     direction: rtl;
     text-align: center;
-    background-color: #111; /* پس‌زمینه تیره‌تر */
+    background-color: #1D4C5C; /* پس‌زمینه تیره‌تر */
     color: #fff; /* متن سفید */
 }
 
@@ -30,7 +30,7 @@ h1 {
     padding: 15px;
     border-radius: 10px;
     width: 220px;
-    background-color: #1c1c1c;
+    background-color: #14223F;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -58,7 +58,7 @@ h1 {
 
 /* 🔹 Header */
 header {
-    background-color: #1c1c1c;
+    background-color: #116979;
     color: #fff;
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
@@ -91,7 +91,7 @@ header nav a:hover {
 
 /* 🔹 Footer */
 footer {
-    background-color: #111;
+    background-color: #116979;
     color: #aaa;
     text-align: center;
     padding: 20px 0;

@@ -16,9 +16,18 @@ type Product struct {
 // هندلر صفحه اصلی
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	products := []Product{
-		{"تی‌شرت مردانه", 250_000, "/static/image.png"},
-		{"شلوار جین", 400_000, "/static/image.png"},
-		{"کفش اسپرت", 550_000, "/static/image.png"},
+		{"تی‌شرت مردانه", 250_000, "/static/imagesone.png"},
+		{"شلوار جین", 400_000, "/static/engimages.png"},
+		{"کفش اسپرت", 550_000, "/static/imagestwo.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+		{"کفش اسپرت", 550_000, "/static/4image.png"},
+
 		/*{" شرتک", 150_000, "/static/image.png"},*/
 	}
 
