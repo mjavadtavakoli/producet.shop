@@ -1,55 +1,19 @@
 package main
 
 import (
-	"html/template"
 	"log"
 	"net/http"
 )
 
-// تعریف ساختار محصول
-type Product struct {
-	Name  string
-	Price float64
-	Image string
-}
-
-// هندلر صفحه اصلی
-func homeHandler(w http.ResponseWriter, r *http.Request) {
-	products := []Product{
-		{"تی‌شرت مردانه", 250_000, "/static/imagesone.png"},
-		{"شلوار جین", 400_000, "/static/engimages.png"},
-		{"کفش اسپرت", 550_000, "/static/imagestwo.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-		{"کفش اسپرت", 550_000, "/static/4image.png"},
-
-		/*{" شرتک", 150_000, "/static/image.png"},*/
-	}
-
-	tmpl, err := template.ParseFiles("templates/index.html")
-	if err != nil {
-		http.Error(w, "خطا در بارگذاری قالب", http.StatusInternalServerError)
-		return
-	}
-
-	err = tmpl.Execute(w, products)
-	if err != nil {
-		http.Error(w, "خطا در رندر قالب", http.StatusInternalServerError)
-	}
-}
-
 func main() {
-	http.HandleFunc("/", homeHandler)
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	log.Println("🚀 سرور در حال اجرا است روی http://localhost:4038")
-	err := http.ListenAndServe(":4038", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./static/index.html")
+	})
+
+	port := ":4038"
+	log.Printf("🚀 Server running at http://127.0.0.1%s", port)
+	log.Fatal(http.ListenAndServe(port, nil))
 }

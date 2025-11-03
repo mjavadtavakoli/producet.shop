@@ -1,114 +1,187 @@
-html, body {
-    height: 100%;           /* ارتفاع کل صفحه */
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* بچه‌ها زیر هم */
-}
-
+/* فونت و تنظیمات پایه */
 body {
-    font-family: sans-serif;
-    direction: rtl;
-    text-align: center;
-    background-color: #062518; /* پس‌زمینه تیره‌تر */
-    color: #fff; /* متن سفید */
-}
-
-h1 {
-    margin-top: 30px;
-}
-
-.product-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.product {
-    border: 1px solid #444;
-    padding: 15px;
-    border-radius: 10px;
-    width: 220px;
-    background-color: #14223F;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
-}
-
-.product img {
-    width: 100%;
-    height: 200px;       /* ارتفاع مشخص */
-    object-fit: cover;   /* بریدن عکس برای تناسب */
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.product h3 {
-    margin: 10px 0 5px 0;
-}
-
-.product p {
-    color: #ccc;
-}
-
-
-/* 🔹 Header */
-header {
-    background-color: #91907B;
-    color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-}
-
-header .container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header h1 {
-    font-size: 22px;
     margin: 0;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* هدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #181818;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff5252;
 }
 
 header nav a {
     color: #ccc;
-    text-decoration: none;
     margin: 0 10px;
-    font-size: 16px;
-    transition: color 0.3s;
+    text-decoration: none;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
 }
 
 header nav a:hover {
     color: #fff;
+    border-bottom: 2px solid #ff5252;
 }
 
-/* 🔹 Footer */
+.cart {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* هیرو */
+.hero {
+    background: url('https://i.imgur.com/Vof8lB9.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #ff5252;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #ff7979;
+}
+
+/* محصولات */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #ff8a8a;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.product {
+    background: #202020;
+    border-radius: 12px;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255, 82, 82, 0.3);
+}
+
+.product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.product p {
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.product button {
+    background: #ff5252;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.product button:hover {
+    background: #ff7979;
+}
+
+/* فوتر */
 footer {
-    background-color: #91907B;
+    background: linear-gradient(90deg, #181818, #222);
     color: #aaa;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
     border-top: 1px solid #333;
-}
-
-
-footer p {
-    margin: 0;
     font-size: 14px;
 }
 
-/* 🔹 Main content adjustment */
-main {
-    flex: 1; /* پر کنه فضای بین header و footer */
-    width: 100%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
+/* واکنش‌گرا */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
 
+    header nav {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .product {
+        width: 90%;
+    }
+}

@@ -1,40 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>فروشگاه من</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-<!-- 🔹 هدر سایت -->
-<header>
-    <div class="container">
-        <h1>🛍️ فروشگاه لباس من</h1>
-        <nav>
-            <a href="#">خانه</a>
-            <a href="#">محصولات</a>
-            <a href="#">تماس با ما</a>
-        </nav>
-    </div>
-</header>
-
-<!-- 🔸 محتوای اصلی -->
-<main>
-    <h2>لیست محصولات</h2>
-    <div class="product-list">
-        {{range .}}
-        <div class="product">
-            <img src="{{.Image}}" alt="{{.Name}}">
-            <h3>{{.Name}}</h3>
-            <p>{{.Price}} تومان</p>
-        </div>
-        {{end}}
-    </div>
-</main>
-
-<!-- 🔹 فوتر سایت -->
-<footer>
-    <p>© 2025 فروشگاه من | ساخته شده با ❤️ و Golang</p>
-</footer>
-</body>
-</html>
